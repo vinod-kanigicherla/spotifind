@@ -76,7 +76,7 @@ Before running your FastAPI application, ensure you have the following prerequis
 3. Uvicorn: An ASGI server for running your FastAPI application.
 
 With your terminal open in the **backend** project directory, start your FastAPI application by running:
-### `python api.py`
+### `python main.py`
 
 ---
 
