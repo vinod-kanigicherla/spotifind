@@ -28,6 +28,9 @@ To enable access to Spotifind, it's necessary for users to have their Spotify ac
 
 - Spotify API: Leveraged to fetch user playlists and create new playlists.
 
+### Process Flow Diagram
+![Flow Diagram](https://github.com/vinod-kanigicherla/spotifind/blob/main/project-pics/Spotifind%20Process%20Flow%20Diagram.png)
+
 ## Frontend Usage
 
 With your terminal open in the **frontend** directory, start your React App by running:
