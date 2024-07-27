@@ -1,26 +1,29 @@
 # Importing all necessary libraries
+import os
+
 import numpy as np
 import pandas as pd
-
 import spotipy
 import spotipy.util as util
+from dotenv import load_dotenv
+from sklearn.decomposition import PCA
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.preprocessing import MinMaxScaler
 from spotipy.oauth2 import SpotifyClientCredentials
 
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.decomposition import PCA
-from sklearn.metrics.pairwise import cosine_similarity
+# Load environment variables from .env file
+load_dotenv()
 
 # Spotify Developer Credential Info
-spotify_client_id = "01385e98a17747c58c71ebdf6c755f58"
-spotify_client_secret = "89c5965b40484437ae9a13c53af6ca9a"
+spotify_client_id = os.getenv("SPOTIFY_CLIENT_ID")
+spotify_client_secret = os.getenv("SPOTIFY_CLIENT_SECRET")
 client_credentials_manager = SpotifyClientCredentials(
     client_id=spotify_client_id, client_secret=spotify_client_secret)
 sp = spotipy.Spotify(
     client_credentials_manager=client_credentials_manager, language="en")
 
 username = ""
-
 
 def set_username(api_username):
     """
@@ -484,3 +487,4 @@ def recommendation_driver(playlist_ids, sp):
     final_recommendations = generate_final_recommendations(
         reco_feature_set, user_summarized_vector, reco_all_df)
     return generate_spotify_playlist(username, final_recommendations, spotify_client_id, spotify_client_secret, sp)
+  

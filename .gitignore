@@ -38,3 +38,6 @@ dist/
 tmp/
 temp/
 
+# Environment Variables
+.env
+
