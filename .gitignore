@@ -6,7 +6,7 @@ __pycache__/
 # Ignore all cache directories that start with .cace
 .cache/
 .cache-*/
-*.cache
+*.cache*
 
 
 # General file formats to ignore
